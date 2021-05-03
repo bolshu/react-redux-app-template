@@ -6,6 +6,11 @@
     "jsx": "react",
     "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "components": ["./src/components/*"],
+      "pages": ["./src/pages/*"]
+    }
   }
 }

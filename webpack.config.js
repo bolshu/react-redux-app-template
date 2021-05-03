@@ -6,9 +6,17 @@ module.exports = {
   entry: {
     app: path.join(__dirname, 'src', 'index.tsx'),
   },
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist'),
+  },
   target: 'web',
   resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    alias: {
+      components: path.resolve(__dirname, 'src/components'),
+      pages: path.resolve(__dirname, 'src/pages'),
+    },
   },
   module: {
     rules: [
@@ -27,13 +35,16 @@ module.exports = {
       },
     ],
   },
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+  devServer: {
+    port: 9000,
+    contentBase: path.join(__dirname, 'dist'),
+    watchContentBase: true,
+    hot: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'index.html'),
     }),
+
   ],
 };

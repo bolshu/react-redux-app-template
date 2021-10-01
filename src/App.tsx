@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from 'pages/Home';
-import About from 'pages/About';
+import Counter from 'pages/Counter';
 
 import AppLayout from 'components/AppLayout';
 import Main from 'components/Main';
@@ -20,7 +20,7 @@ const App = () => (
           </Route>
 
           <Route path="/about">
-            <About />
+            <Counter />
           </Route>
         </Switch>
       </Main>
